@@ -7,13 +7,15 @@ local toggle = true
 
 function onUse(use)
     --switch_use toggle反転
-    if use == "swtch" then
+    print("グリップされました")
+    if use == "switch" then
         toggle = not(toggle)
 
         if toggle == true then
             --stop rain
             eff_rain._ALL_Stop()
             --play snow
+            eff_snow._ALL_SetLoop(true)
             eff_snow._ALL_Play()
             print("天候 : 雪")
         end
@@ -22,8 +24,10 @@ function onUse(use)
             --stop snow
             eff_snow._ALL_Stop()
             --play rain
+            eff_rain._ALL_SetLoop(true)
             eff_rain._ALL_Play()
             print("天候 : 雨")
+        end
     end
 end
 
@@ -47,9 +51,7 @@ end
 --数字キー 3 が押されたとき
 --天候 : 雨
 if vci.me.GetButtonInput(2) then
-    eff_snow._ALL_Stop())
+    eff_snow._ALL_Stop()
     eff_rain._ALL_Play()
     print("天候 : 雨")
 end
-
-
