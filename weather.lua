@@ -31,7 +31,7 @@ function onUse(use)
     end
 end
 
-function keyboardinput()
+function update()
     --数字キー 1 が押されたとき
     --全エフェクト停止
     if vci.me.GetButtonInput(1) then
