@@ -34,7 +34,7 @@ end
 function keyboardinput()
     --数字キー 1 が押されたとき
     --全エフェクト停止
-    if vci.me.GetButtonInput(1) thenS
+    if vci.me.GetButtonInput(1) then
         eff_snow._ALL_Stop()
         eff_rain._ALL_Stop()
         print("天候 : 晴れ")
