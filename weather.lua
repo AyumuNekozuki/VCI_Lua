@@ -37,7 +37,7 @@ function keyboardinput()
     if vci.me.GetButtonInput(1) then
         eff_snow._ALL_Stop()
         eff_rain._ALL_Stop()
-        print("天候 : 晴れ")
+        print("天候 : 無")
     end
 
     --数字キー 2 が押されたとき
