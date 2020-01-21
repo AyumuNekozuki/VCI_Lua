@@ -73,7 +73,7 @@ function update()
 
     --日時出力
     vci.assets._ALL_SetText("date", tostring(ymd) .. tostring(syukujitu))
-    vci.assets._ALL_SetText("hh:mm:ss", tostring(HMS))
+    vci.assets._ALL_SetText("time", tostring(HMS))
 
     --時間帯あいさつ
     local timesc = ""
@@ -175,7 +175,7 @@ function update()
 
     --時間帯
     if (hour == "18" or "19" or "20") and (wday ~= "土" or "日") then
-        message = "おかえり～！\nお仕事お疲れさま！！"
+        message = "おかえり～！\n今日も一日お疲れさま！！"
     end
     if (hour == "22" or "23") and (wday == "金" or "土") then
         message = "明日休みだしオールしない？"
@@ -219,4 +219,7 @@ function update()
     if (month == "11" or "12" or "1" or "2") and (timesc == "こんにちは！" or "こんばんは！") then
         message = "ゔぅ...寒い...\nキミも風邪ひかないでね..."
     end
+
+
+    vci.assets._ALL_SetText("message", tostring(timesc)"\n" .. tostring(message))
 end
